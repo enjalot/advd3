@@ -1,0 +1,111 @@
+<html>
+  <head>
+    <!-- tributary dependencies -->
+    <link rel="stylesheet" href="/static/cm/codemirror.css">
+    <link rel="stylesheet" href="/static/cm/lesser-dark.css">
+    <link rel="stylesheet" href="/static/cm/lint.css">
+    <link rel="stylesheet" href="/static/inlet.css" type="text/css" media="screen" charset="utf-8">
+    <script src="/static/html5slider.js"></script>
+
+    <script src="/static/jquery-1.7.min.js"></script>
+    <script src='/static/tributary.min.js?v=0.8'></script>
+ 
+    <!-- blog style -->
+    <link rel="stylesheet" href="style.css">
+
+
+  </head>
+  <body>
+
+    <div id=post1 class=post>
+      <h2>This is my post</h2>
+      <p>some cool text</p>
+
+      <example id=one>
+        <snippet style="height: 140px">
+var svg = d3.select("#one svg");
+svg.append("rect")
+.attr({
+  x: 10,
+  y: 10,
+  width: 200,
+  height: 20
+})
+</snippet>
+        <div class=display style="height: 100px">
+        </div>
+      </example>
+      
+    </div>
+      
+    <div id=post2 class=post>
+      <h2>This is my other post</h2>
+      <p>some more cool text</p>
+      <example id=one>
+        <snippet style="height: 140px">
+var svg = d3.select("#one svg");
+svg.append("rect")
+.attr({
+  x: 10,
+  y: 10,
+  width: 200,
+  height: 20
+})
+</snippet>
+        <div class=display style="height: 100px">
+        </div>
+      </example>
+
+
+    </div>
+
+    <script>
+      var examples = d3.selectAll("example")
+        .each(function(d,i) {
+          var id = this.id;
+          makeSVGExample(id);
+        })
+      
+      function makeSVGExample(id) {
+        var tb = Tributary();
+        var config = new tb.Config();
+
+        var example = d3.select("#" + id)
+        var snippet = example.select("snippet");
+        var code = snippet.html()
+        console.log("CODE", code)
+
+        var model = new tb.CodeModel({
+          filename:"test.js",
+          code: code
+        });
+
+        var context = new tb.TributaryContext({
+          config: config,
+          model: model,
+          el: example.select(".display").node()
+        });
+        context.render();
+
+        //append editor in snippet
+        snippet.html("");
+        var editorDiv = snippet.append("div")//example.insert("div", ".display")
+        .classed("editor", true);
+
+        var editor = new tb.Editor({
+          model: model,
+          //el: example.select("snippet").node()
+          el: editorDiv.node()
+        });
+        editor.render();
+        tb.events.trigger("execute");
+
+      }
+      
+    </script>
+    
+    
+  </body>
+</html>
+
+    

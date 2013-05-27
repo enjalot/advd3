@@ -1,0 +1,59 @@
+
+body {
+  background-color: #eee
+}
+
+.post {
+  display: block;
+  position: relative;
+  margin: 0 auto; 
+  margin-top: 20px;
+  width: 600px;
+  height: 400px;
+  background-color: white;
+}
+
+
+
+snippet {
+  /*display:none;*/
+  width: 100%;
+  display: block;
+}
+
+.editor {
+  width: 98%;
+  height: 100%;
+  margin: 1%;
+  border: 1px solid black;
+  border-radius: 3px;
+}
+
+.display {
+  width: 98%;
+  height: 150px;
+  border: 1px solid black;
+  border-radius: 3px;
+  margin: 1%;
+}
+
+
+/* not sure why i have to tweak this */
+.inlet_slider .range {
+  margin-top: 14px;
+}
+
+/* CodeMirror styling */
+.CodeMirror {
+  height: 100%;
+  //margin-bottom: 40px;
+}
+.CodeMirror-scroll {
+  width: 100%;
+  //overflow-y: hidden;
+  overflow-x: auto;
+}
+
+.CodeMirror-gutter.error {
+  border-right: 2px solid red;
+}
