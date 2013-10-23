@@ -1,110 +1,40 @@
 <html>
   <head>
-    <!-- tributary dependencies -->
-    <link rel="stylesheet" href="/static/cm/codemirror.css">
-    <link rel="stylesheet" href="/static/cm/lesser-dark.css">
-    <link rel="stylesheet" href="/static/cm/lint.css">
-    <link rel="stylesheet" href="/static/inlet.css" type="text/css" media="screen" charset="utf-8">
-    <script src="/static/html5slider.js"></script>
-
-    <script src="/static/jquery-1.7.min.js"></script>
-    <script src='/static/tributary.min.js?v=0.8'></script>
- 
-    <!-- blog style -->
     <link rel="stylesheet" href="style.css">
 
-
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+      ga('create', 'UA-39326674-3', 'adventuresind3.com');
+      ga('send', 'pageview');
+    </script>
   </head>
   <body>
+    <a href="/oct2013">Oct. 2013 - html5devconf</a>
 
-    <div id=post1 class=post>
-      <h2>This is my post</h2>
-      <p>some cool text</p>
-
-      <example id=one>
-        <snippet style="height: 140px">
-var svg = d3.select("#one svg");
-svg.append("rect")
-.attr({
-  x: 10,
-  y: 10,
-  width: 200,
-  height: 20
-})
-</snippet>
-        <div class=display style="height: 100px">
-        </div>
-      </example>
-      
+    <!--
+    <div id=posts class=section>
+      <ul class="post">
+        <li>Video</li>
+      </ul>
     </div>
-      
-    <div id=post2 class=post>
-      <h2>This is my other post</h2>
-      <p>some more cool text</p>
-      <example id=one>
-        <snippet style="height: 140px">
-var svg = d3.select("#one svg");
-svg.append("rect")
-.attr({
-  x: 10,
-  y: 10,
-  width: 200,
-  height: 20
-})
-</snippet>
-        <div class=display style="height: 100px">
-        </div>
-      </example>
+    
+    <div id=mixtapes class=section>
 
+      <h3>Prototype</h3>
+      <ul class="video">
+        <li>Video</li>
+      </ul>
+
+      <h3>dot append</h3>
+      
+      <h3>dot enter</h3>
 
     </div>
-
-    <script>
-      var examples = d3.selectAll("example")
-        .each(function(d,i) {
-          var id = this.id;
-          makeSVGExample(id);
-        })
-      
-      function makeSVGExample(id) {
-        var tb = Tributary();
-        var config = new tb.Config();
-
-        var example = d3.select("#" + id)
-        var snippet = example.select("snippet");
-        var code = snippet.html()
-        console.log("CODE", code)
-
-        var model = new tb.CodeModel({
-          filename:"test.js",
-          code: code
-        });
-
-        var context = new tb.TributaryContext({
-          config: config,
-          model: model,
-          el: example.select(".display").node()
-        });
-        context.render();
-
-        //append editor in snippet
-        snippet.html("");
-        var editorDiv = snippet.append("div")//example.insert("div", ".display")
-        .classed("editor", true);
-
-        var editor = new tb.Editor({
-          model: model,
-          //el: example.select("snippet").node()
-          el: editorDiv.node()
-        });
-        editor.render();
-        tb.events.trigger("execute");
-
-      }
-      
-    </script>
-    
-    
+    -->
+            
   </body>
 </html>
 
