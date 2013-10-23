@@ -22,7 +22,7 @@ snippet {
   padding-top: 110px;
 }
 .content {
-  max-width: 900px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .header {
@@ -38,7 +38,7 @@ snippet {
   background-color: #fff;
 }
 .header-content {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 .header a{
@@ -89,6 +89,8 @@ p {
 }
 .editor {
   width: 100%;
+  border: 1px solid gray;
+  margin-top: 20px;
 }
 .editor .CodeMirror {
   width: 100%;
