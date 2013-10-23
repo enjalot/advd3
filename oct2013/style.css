@@ -19,7 +19,7 @@ snippet {
   position:absolute;
 }
 .content .section {
-  margin-top: 110px;
+  padding-top: 110px;
 }
 .content {
   max-width: 900px;
