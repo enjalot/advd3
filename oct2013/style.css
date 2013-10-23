@@ -14,10 +14,14 @@ a, a:hover, a:visited {
 snippet {
   display: none;
 }
-.content {
-  position:absolute;
+.container {
   width: 100%;
-  top: 70px;
+  position:absolute;
+  top: 110px;
+}
+.content {
+  max-width: 900px;
+  margin: 0 auto;
 }
 .header {
   display: inline-block;
@@ -25,11 +29,15 @@ snippet {
   top:0;
   margin-top:0;
   padding-bottom: 5px;
-  height: 70px;
+  height: 110px;
   width: 100%;
   z-index:1000;
   background-color: #ebebeb;
   background-color: #fff;
+}
+.header-content {
+  max-width: 800px;
+  margin: 0 auto;
 }
 .header a{
   float:left;
@@ -37,8 +45,11 @@ snippet {
   margin-left: 10px;
 }
 .header ul {
-  margin-top: 30px;
   width: 100%;
+  padding: 0;
+  margin: 0;
+  float: left;
+  clear: left;
 }
 .header li {
   font-family: Ubuntu;
